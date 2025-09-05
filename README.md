@@ -1,16 +1,75 @@
-# indomgram
+# IND OM Gram
 
-A new Flutter project.
+<p align="center">
+  <img src="assets/images/IND.png" alt="IND OM Gram Logo" width="200"/>
+</p>
 
-## Getting Started
+## About
+IND OM Gram is an indigenous social media platform designed to connect Indians in a unique and culturally-relevant way. The app provides a familiar social media experience while celebrating Indian culture, values, and content.
 
-This project is a starting point for a Flutter application.
+## Developed By
+**OM Sinha**
 
-A few resources to get you started if this is your first Flutter project:
+## Features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Home Feed**: View posts from followed accounts in a clean, modern interface
+- **Discover**: Explore trending content and find new accounts to follow
+- **Create Content**: Easily share various types of content:
+  - Posts with images and text
+  - Bharat Reels (short videos)
+  - Stories (ephemeral content)
+  - Live broadcasts
+  - Articles and long-form content
+  - Polls and interactive content
+- **Bharat Reels**: Watch and engage with short-form video content
+- **Profile**: Manage your personal profile and content
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Tech Stack
+
+- **Flutter**: Cross-platform UI framework
+- **Dart**: Programming language
+- **Material Design**: UI components with Indian-inspired themes
+
+## Colors
+
+The app features colors inspired by the Indian flag:
+- Indian Orange (`#FF9933`)
+- Indian Green (`#138808`)
+- Indian Blue (`#000080`)
+
+## Installation
+
+1. Ensure you have Flutter installed on your machine
+2. Clone this repository:
+```bash
+git clone https://github.com/yourusername/IND-OM-Gram.git
+```
+3. Navigate to the project directory:
+```bash
+cd IND-OM-Gram
+```
+4. Install dependencies:
+```bash
+flutter pub get
+```
+5. Run the app:
+```bash
+flutter run
+```
+
+## Screenshots
+
+[Coming soon]
+
+## Roadmap
+
+- User authentication
+- Direct messaging
+- Content moderation tools
+- Regional language support
+- Community features
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
