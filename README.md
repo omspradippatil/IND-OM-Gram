@@ -8,7 +8,7 @@
 IND OM Gram is an indigenous social media platform designed to connect Indians in a unique and culturally-relevant way. The app provides a familiar social media experience while celebrating Indian culture, values, and content.
 
 ## Developed By
-**OM Sinha**
+**OM Pradip Patil**
 
 ## Features
 
