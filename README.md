@@ -1,9 +1,5 @@
 # IND OM Gram
 
-<p align="center">
-  <img src="assets/images/IND.png" alt="IND OM Gram Logo" width="200"/>
-</p>
-
 ## About
 IND OM Gram is an indigenous social media platform designed to connect Indians in a unique and culturally-relevant way. The app provides a familiar social media experience while celebrating Indian culture, values, and content.
 
@@ -68,6 +64,10 @@ flutter run
 - Content moderation tools
 - Regional language support
 - Community features
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Contributing
 

@@ -197,15 +197,12 @@ class _MainDashboardState extends State<MainDashboard> with SingleTickerProvider
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _selectedIndex == 0 ? AppBar(
-        title: Row(
-          children: [
-            Image.asset(
-              'assets/images/IND.png',
-              height: 40,
-            ),
-            const SizedBox(width: 8),
-            const Text('IND OM Gram'),
-          ],
+        title: const Text(
+          'IND OM Gram',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 22,
+          ),
         ),
         backgroundColor: Theme.of(context).colorScheme.surface,
         elevation: 0,
