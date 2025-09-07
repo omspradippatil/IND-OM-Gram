@@ -32,11 +32,9 @@ class AppTheme {
     onError: Colors.white,
     errorContainer: Colors.red.shade200,
     onErrorContainer: Colors.red.shade800,
-    background: indianWhite,
-    onBackground: Colors.black87,
     surface: Colors.white,
     onSurface: Colors.black87,
-    surfaceVariant: Colors.grey.shade100,
+    surfaceContainerHighest: Colors.grey.shade100,
     onSurfaceVariant: Colors.grey.shade700,
     outline: Colors.grey.shade400,
     shadow: Colors.black.withOpacity(0.1),
@@ -64,11 +62,9 @@ class AppTheme {
     onError: Colors.black,
     errorContainer: Colors.red.shade900,
     onErrorContainer: Colors.red.shade200,
-    background: const Color(0xFF121212),
-    onBackground: Colors.white,
     surface: const Color(0xFF1E1E1E),
     onSurface: Colors.white,
-    surfaceVariant: const Color(0xFF303030),
+    surfaceContainerHighest: const Color(0xFF303030),
     onSurfaceVariant: Colors.grey.shade300,
     outline: Colors.grey.shade600,
     shadow: Colors.black,
@@ -83,7 +79,7 @@ class AppTheme {
       useMaterial3: true,
       brightness: Brightness.light,
       colorScheme: _lightColorScheme,
-      scaffoldBackgroundColor: _lightColorScheme.background,
+      scaffoldBackgroundColor: _lightColorScheme.surface,
       appBarTheme: AppBarTheme(
         backgroundColor: _lightColorScheme.surface,
         foregroundColor: _lightColorScheme.onSurface,
@@ -100,8 +96,8 @@ class AppTheme {
       navigationBarTheme: NavigationBarThemeData(
         backgroundColor: _lightColorScheme.surface,
         indicatorColor: _lightColorScheme.primaryContainer,
-        labelTextStyle: MaterialStateProperty.resolveWith((states) {
-          if (states.contains(MaterialState.selected)) {
+        labelTextStyle: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
             return TextStyle(
               fontFamily: 'Poppins',
               fontSize: 12,
@@ -116,8 +112,8 @@ class AppTheme {
             color: _lightColorScheme.onSurfaceVariant,
           );
         }),
-        iconTheme: MaterialStateProperty.resolveWith((states) {
-          if (states.contains(MaterialState.selected)) {
+        iconTheme: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
             return IconThemeData(
               color: _lightColorScheme.primary,
               size: 24,
@@ -184,7 +180,7 @@ class AppTheme {
       ),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        fillColor: _lightColorScheme.surfaceVariant,
+        fillColor: _lightColorScheme.surfaceContainerHighest,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: BorderSide.none,
@@ -274,7 +270,7 @@ class AppTheme {
       useMaterial3: true,
       brightness: Brightness.dark,
       colorScheme: _darkColorScheme,
-      scaffoldBackgroundColor: _darkColorScheme.background,
+      scaffoldBackgroundColor: _darkColorScheme.surface,
       appBarTheme: AppBarTheme(
         backgroundColor: _darkColorScheme.surface,
         foregroundColor: _darkColorScheme.onSurface,
@@ -291,8 +287,8 @@ class AppTheme {
       navigationBarTheme: NavigationBarThemeData(
         backgroundColor: _darkColorScheme.surface,
         indicatorColor: _darkColorScheme.primaryContainer,
-        labelTextStyle: MaterialStateProperty.resolveWith((states) {
-          if (states.contains(MaterialState.selected)) {
+        labelTextStyle: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
             return TextStyle(
               fontFamily: 'Poppins',
               fontSize: 12,
@@ -307,8 +303,8 @@ class AppTheme {
             color: _darkColorScheme.onSurfaceVariant,
           );
         }),
-        iconTheme: MaterialStateProperty.resolveWith((states) {
-          if (states.contains(MaterialState.selected)) {
+        iconTheme: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
             return IconThemeData(
               color: _darkColorScheme.primary,
               size: 24,
@@ -375,7 +371,7 @@ class AppTheme {
       ),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        fillColor: _darkColorScheme.surfaceVariant,
+        fillColor: _darkColorScheme.surfaceContainerHighest,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: BorderSide.none,

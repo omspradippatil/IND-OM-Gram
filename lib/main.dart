@@ -10,9 +10,7 @@ import 'package:indomgram/theme/app_theme.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(
-    const SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent,
-    ),
+    const SystemUiOverlayStyle(statusBarColor: Colors.transparent),
   );
   runApp(const BharatSocialApp());
 }
@@ -23,7 +21,6 @@ class BharatSocialApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'IND OM Gram',
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system,
@@ -40,14 +37,15 @@ class MainDashboard extends StatefulWidget {
   State<MainDashboard> createState() => _MainDashboardState();
 }
 
-class _MainDashboardState extends State<MainDashboard> with SingleTickerProviderStateMixin {
+class _MainDashboardState extends State<MainDashboard>
+    with SingleTickerProviderStateMixin {
   int _selectedIndex = 0;
   late AnimationController _animationController;
-  
+
   final List<Widget> _screens = [
     const HomeScreen(),
     const DiscoverScreen(), // Renamed from SearchScreen
-    const CreateScreen(),   // Renamed from AddScreen
+    const CreateScreen(), // Renamed from AddScreen
     const BharatReelsScreen(), // Renamed from ReelsScreen
     const ProfileScreen(),
   ];
@@ -75,7 +73,7 @@ class _MainDashboardState extends State<MainDashboard> with SingleTickerProvider
       _showCreateOptions();
       return;
     }
-    
+
     setState(() {
       _selectedIndex = index;
     });
@@ -109,10 +107,7 @@ class _MainDashboardState extends State<MainDashboard> with SingleTickerProvider
             const SizedBox(height: 24),
             const Text(
               'Create New',
-              style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-              ),
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 30),
             Expanded(
@@ -137,21 +132,9 @@ class _MainDashboardState extends State<MainDashboard> with SingleTickerProvider
                     Icons.timelapse,
                     AppTheme.indianBlue,
                   ),
-                  _buildCreateOption(
-                    'Live',
-                    Icons.live_tv,
-                    Colors.red,
-                  ),
-                  _buildCreateOption(
-                    'Article',
-                    Icons.article,
-                    Colors.purple,
-                  ),
-                  _buildCreateOption(
-                    'Poll',
-                    Icons.poll,
-                    Colors.amber,
-                  ),
+                  _buildCreateOption('Live', Icons.live_tv, Colors.red),
+                  _buildCreateOption('Article', Icons.article, Colors.purple),
+                  _buildCreateOption('Poll', Icons.poll, Colors.amber),
                 ],
               ),
             ),
@@ -196,17 +179,14 @@ class _MainDashboardState extends State<MainDashboard> with SingleTickerProvider
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _selectedIndex == 0 ? AppBar(
-        title: const Text(
-          'IND OM Gram',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 22,
-          ),
-        ),
-        backgroundColor: Theme.of(context).colorScheme.surface,
-        elevation: 0,
-      ) : null,
+      // Remove AppBar for home screen (index 0) since HomeScreen has its own AppBar
+      appBar: _selectedIndex != 0
+          ? AppBar(
+              title: _getScreenTitle(_selectedIndex),
+              backgroundColor: Theme.of(context).colorScheme.surface,
+              elevation: 0,
+            )
+          : null,
       body: _screens[_selectedIndex],
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
@@ -272,5 +252,45 @@ class _MainDashboardState extends State<MainDashboard> with SingleTickerProvider
         ),
       ),
     );
+  }
+
+  // Helper method to get the title for each screen
+  Widget _getScreenTitle(int index) {
+    switch (index) {
+      case 1:
+        return const Text('Discover Bharat');
+      case 2:
+        return const Text('Create Content');
+      case 3:
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'Bharat',
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(width: 4),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+              decoration: BoxDecoration(
+                color: AppTheme.indianOrange,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: const Text(
+                'REELS',
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ],
+        );
+      case 4:
+        return const Text('Profile');
+      default:
+        return const Text('IND OM Gram');
+    }
   }
 }

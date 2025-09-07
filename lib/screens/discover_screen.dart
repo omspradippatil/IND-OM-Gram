@@ -76,7 +76,7 @@ class _DiscoverScreenState extends State<DiscoverScreen> with SingleTickerProvid
                       margin: const EdgeInsets.symmetric(horizontal: 4),
                       child: Chip(
                         label: Text('#${_trendingTopics[index]}'),
-                        backgroundColor: Theme.of(context).colorScheme.surfaceVariant,
+                        backgroundColor: Theme.of(context).colorScheme.surfaceContainerHighest,
                         side: BorderSide.none,
                         padding: const EdgeInsets.symmetric(horizontal: 8),
                       ),

@@ -15,7 +15,7 @@ IND OM Gram is an indigenous social media platform designed to connect Indians i
   - Bharat Reels (short videos)
   - Stories (ephemeral content)
   - Live broadcasts
-  - Articles and long-form content
+  - Articles and long-form content 
   - Polls and interactive content
 - **Bharat Reels**: Watch and engage with short-form video content
 - **Profile**: Manage your personal profile and content

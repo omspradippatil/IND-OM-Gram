@@ -129,7 +129,7 @@ class PostCard extends StatelessWidget {
                 style: DefaultTextStyle.of(context).style,
                 children: [
                   TextSpan(
-                    text: post.user.username + ' ',
+                    text: '${post.user.username} ',
                     style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                   TextSpan(text: post.caption),
